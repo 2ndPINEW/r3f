@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "R3F Playground",
   description: "R3F Playground",
+  robots: "noindex,nofollow",
 };
 
 export default function RootLayout({
