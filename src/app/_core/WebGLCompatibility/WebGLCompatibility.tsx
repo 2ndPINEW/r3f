@@ -18,7 +18,7 @@ export const WebGLCompatibility = ({
       {compatibilityState === "checking" && loading}
       {compatibilityState === "available" && canvas}
       {compatibilityState === "unavailable" &&
-        (fallback ?? ErrorDialog({ errorMessage }))}
+        (fallback ?? ErrorDialog({ errorMessage: errorMessage! }))}
     </>
   );
 };

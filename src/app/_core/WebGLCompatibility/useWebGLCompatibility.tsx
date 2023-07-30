@@ -7,9 +7,7 @@ export const useWebGLCompatibility = () => {
   const [compatibilityState, setCompatibilityState] =
     useState<WebGLCompatibilityState>("checking");
 
-  const [errorMessage, setErrorMessage] = useState<HTMLElement>(
-    document.createElement("div")
-  );
+  const [errorMessage, setErrorMessage] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
     const isWebGLAvailable = WebGL.isWebGLAvailable();
