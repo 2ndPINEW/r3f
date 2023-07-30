@@ -1,22 +1,29 @@
+"use client";
+import * as THREE from "three";
+import { useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
-import { useRef } from "react";
-import { Mesh } from "three";
 
-function Line() {
-  const ref = useRef<Mesh>();
+const Particles = () => {
+  const planePositions = useMemo(() => {
+    const points = [];
+    points.push(new THREE.Vector3(-10, 0, 0));
+    points.push(new THREE.Vector3(0, 10, 0));
+    points.push(new THREE.Vector3(10, 0, 0));
+    return points;
+  }, []);
 
   return (
-    <mesh ref={ref as any}>
-      <bufferGeometry />
-      <meshStandardMaterial color={"orange"} />
-    </mesh>
+    <line>
+      {/* <geometry attach="geometry" vertices={planePositions} /> */}
+      <lineBasicMaterial attach="material" color="red" />
+    </line>
   );
-}
+};
 
 export const DrawLine = () => {
   return (
-    <Canvas>
-      <Line />
+    <Canvas dpr={2}>
+      <Particles />
     </Canvas>
   );
 };

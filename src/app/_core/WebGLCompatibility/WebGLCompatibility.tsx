@@ -1,22 +1,24 @@
+"use client";
+
 import { ReactElement } from "react";
 import { useWebGLCompatibility } from "./useWebGLCompatibility";
 
 type WebGLCompatibilityProps = {
   loading?: ReactElement;
-  canvas: ReactElement;
   fallback?: ReactElement;
+  children: ReactElement | ReactElement[];
 };
 
 export const WebGLCompatibility = ({
   loading,
-  canvas,
   fallback,
+  children,
 }: WebGLCompatibilityProps) => {
   const { compatibilityState, errorMessage } = useWebGLCompatibility();
   return (
     <>
       {compatibilityState === "checking" && loading}
-      {compatibilityState === "available" && canvas}
+      {compatibilityState === "available" && children}
       {compatibilityState === "unavailable" &&
         (fallback ?? ErrorDialog({ errorMessage: errorMessage! }))}
     </>
