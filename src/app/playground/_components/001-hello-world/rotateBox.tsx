@@ -8,6 +8,8 @@ function Box(props: { position: [number, number, number] }) {
   const [hovered, hover] = useState(false);
   const [clicked, click] = useState(false);
 
+  console.log("Box render");
+
   useFrame((state, delta) => {
     if (ref.current) {
       ref.current.rotation.x += delta;
