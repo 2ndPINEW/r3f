@@ -8,7 +8,7 @@ export const HelloR3f = () => {
       camera={{ fov: 75, near: 0.1, far: 500, position: [0, 0, 100] }}
       style={{ height: "400px" }}
     >
-      <OrbitControls makeDefault />
+      <OrbitControls enableZoom={false} />
       <ambientLight intensity={0.1} />
       <directionalLight color="white" position={[100, 100, 100]} />
       <mesh>

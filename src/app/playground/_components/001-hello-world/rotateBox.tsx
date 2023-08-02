@@ -38,7 +38,7 @@ export const RotateBox = () => {
     <Canvas style={{ height: "400px" }}>
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
-      <OrbitControls makeDefault />
+      <OrbitControls enableZoom={false} />
       <Box position={[-1.2, 0, 0]} />
       <Box position={[1.2, 0, 0]} />
     </Canvas>
