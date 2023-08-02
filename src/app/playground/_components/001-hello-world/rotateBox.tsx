@@ -1,5 +1,5 @@
 "use client";
-import { OrbitControls } from "@react-three/drei";
+import { Environment, OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { Mesh } from "three";
@@ -41,6 +41,7 @@ export const RotateBox = () => {
       <OrbitControls enableZoom={false} />
       <Box position={[-1.2, 0, 0]} />
       <Box position={[1.2, 0, 0]} />
+      <Environment preset="sunset" background />
     </Canvas>
   );
 };
