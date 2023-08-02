@@ -35,7 +35,7 @@ function Box(props: { position: [number, number, number] }) {
 
 export const RotateBox = () => {
   return (
-    <Canvas>
+    <Canvas style={{ height: "400px" }}>
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
       <OrbitControls makeDefault />
