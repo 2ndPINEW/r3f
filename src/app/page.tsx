@@ -1,3 +1,9 @@
+import Link from "next/link";
+
 export default function Home() {
-  return <main>playground</main>;
+  return (
+    <main>
+      <Link href={"/playground"}>Go to Playground</Link>
+    </main>
+  );
 }
